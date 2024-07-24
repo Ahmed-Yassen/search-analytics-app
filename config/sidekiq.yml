@@ -1,0 +1,10 @@
+---
+:concurrency: 5
+:queues:
+  - default
+:scheduler:
+  :schedule:
+    move_queries_to_db:
+      every: '15s'
+      class: 'MoveQueriesToDbJob'
+      queue: default

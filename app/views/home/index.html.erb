@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Analytics App</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+</head>
+<body>
+  <div class="container">
+    <h1>Search Articles</h1>
+    <input type="text" id="search-input" placeholder="Type to search...">
+    <div id="related-articles"></div>
+</div>
+</body>
+</html>

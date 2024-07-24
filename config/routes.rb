@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  # Mount Sidekiq web UI
+  root 'home#index'
   mount Sidekiq::Web => '/sidekiq'
-
+  get 'search', to: 'search#index'
 end

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Analytics App</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+</head>
+<body>
+  <div class="container">
+  <h1>Search Analytics</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Query</th>
+        <th>Count</th>
+        <th>IP Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @queries.each do |(query, ip), count| %>
+        <tr>
+          <td><%= query %></td>
+          <td><%= count %></td>
+          <td><%= ip %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back to Search', root_path, class: 'btn btn-primary' %>
+</div>
+</div>
+</body>
+</html>

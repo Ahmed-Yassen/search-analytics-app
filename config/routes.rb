@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'home#index'
   mount Sidekiq::Web => '/sidekiq'
   get 'search', to: 'search#index'
+  get 'analytics', to: 'analytics#index'
 end

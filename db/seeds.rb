@@ -24,7 +24,7 @@ articles = [
   'Dragon Ball Super',
   'Hunter X Hunter',
   'What is a good car',
-  'How is How is Emil Hajric doing'
+  'How is Emil Hajric doing'
 ]
 
 articles.each do |title|

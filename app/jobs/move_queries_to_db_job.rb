@@ -11,7 +11,7 @@ class MoveQueriesToDbJob
       next unless key.match?(query_key_regex)
 
       data = JSON.parse(redis.get(key))
-      if Time.now.to_i - data['last_modified'] >= 15
+      if Time.now.to_i - data['last_modified'] >= 10
         Query.create!(content: data['query'], user_ip: key.split('-').first)
         redis.del(key)
       end

@@ -5,6 +5,6 @@
 :scheduler:
   :schedule:
     move_queries_to_db:
-      every: '15s'
+      every: '10s'
       class: 'MoveQueriesToDbJob'
       queue: default

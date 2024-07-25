@@ -7,12 +7,75 @@
 
   <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
   <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      margin-top: 100px;
+      width: 80%;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    #search-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #007bff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    #related-articles {
+      margin-top: 20px;
+    }
+
+    .article {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>Search Articles</h1>
     <input type="text" id="search-input" placeholder="Type to search...">
-    <div id="related-articles"></div>
-</div>
+    <%= link_to 'View Analytics', analytics_path, class: 'btn-primary' %>
+    <div id="related-articles">
+    </div>
+  </div>
 </body>
 </html>

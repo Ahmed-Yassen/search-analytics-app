@@ -7,29 +7,85 @@
 
     <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
     <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 80%;
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Push content to top and button to bottom */
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+      }
+
+      th, td {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f4f4f4;
+      }
+
+      td {
+        background-color: #fff;
+      }
+
+      .btn-primary {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #007bff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        align-self: center;
+        margin-top: 150px;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <h1>Analytics</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Query</th>
-            <th>Count</th>
-            <th>User IPs</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @queries.each do |query| %>
+      <div>
+        <h1>Analytics</h1>
+        <table>
+          <thead>
             <tr>
-              <td><%= query.content %></td>
-              <td><%= query.count %></td>
-              <td><%= query.user_ips.join(", ") %></td>
+              <th>Query</th>
+              <th>Count</th>
+              <th>User IPs</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <a href="<%= root_path %>">Back to Home</a>
+          </thead>
+          <tbody>
+            <% @queries.each do |query| %>
+              <tr>
+                <td><%= query.content %></td>
+                <td><%= query.count %></td>
+                <td><%= query.user_ips.join(", ") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <a href="<%= root_path %>" class="btn-primary">Back to Home</a>
     </div>
   </body>
 </html>

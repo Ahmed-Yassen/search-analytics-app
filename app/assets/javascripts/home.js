@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (data.articles.length > 0) {
         data.articles.forEach(article => {
           const articleElement = document.createElement('div');
+          articleElement.className = 'article';
           articleElement.innerText = article.title;
           relatedArticles.appendChild(articleElement);
         });
